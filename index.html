@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayesha Adnan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .header {
+            padding: 1rem;
+        }
+        .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .text-neon {
+            color: #20c997;
+            text-shadow: 0 0 3px rgba(32, 201, 151, 0.5), 
+                         0 0 6px rgba(32, 201, 151, 0.5), 
+                         0 0 12px rgba(32, 201, 151, 0.5);
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #20c997 !important;
+            text-shadow: 0 0 3px rgba(32, 201, 151, 0.5), 
+                         0 0 6px rgba(32, 201, 151, 0.5), 
+                         0 0 12px rgba(32, 201, 151, 0.5);
+        }
+        .main-content {
+            min-height: 100vh;
+        }
+        .profile-img {
+            border: 4px solid #20c997;
+            border-radius: 50%;
+            box-shadow: 0 0 3px rgba(32, 201, 151, 0.5), 
+                        0 0 6px rgba(32, 201, 151, 0.5), 
+                        0 0 12px rgba(32, 201, 151, 0.5);
+            max-width: 250px;
+        }
+        .social-icons a {
+            color: #20c997;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+        .buttons .btn {
+            margin: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+        .btn-hire {
+            background-color: #20c997;
+            color: black;
+        }
+        .btn-contact {
+            border: 2px solid #20c997;
+            color: #20c997;
+            background-color: transparent;
+        }
+        .btn-contact:hover {
+            background-color: #20c997;
+            color: black;
+        }
+        .typing {
+            display: inline;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #20c997;
+            animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .center-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #20c997;
+            transform: translateX(-50%);
+        }
+        .timeline-block {
+            position: relative;
+            width: 50%;
+            padding: 1rem 2rem;
+        }
+        .timeline-block.left {
+            left: 0;
+        }
+        .timeline-block.right {
+            left: 50%;
+        }
+        .marker {
+            position: absolute;
+            top: 1rem;
+            left: -1rem;
+            width: 1rem;
+            height: 1rem;
+            background: #20c997;
+            border-radius: 50%;
+        }
+        .timeline-block.right .marker {
+            left: auto;
+            right: -1rem;
+        }
+        .education-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #00f0ff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-container {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            text-align: left;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container.left::after, .timeline-container.right::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #00f0ff;
+            border-radius: 50%;
+            top: 15px;
+        }
+        .timeline-container.left::after {
+            left: -10px;
+        }
+        .timeline-container.right::after {
+            right: -10px;
+        }
+        .education-box {
+            background: rgba(0, 240, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #20c997;
+            transition: 0.3s;
+        }
+        .education-box:hover {
+            background: rgba(0, 240, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="brand">
+            <span class="text-white">Ayesha</span>
+            <span class="text-neon">Adnan</span>
+        </div>
+        <nav class="d-none d-md-flex align-items-center">
+            <a class="nav-link mx-2" href="#home">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+            <a class="nav-link mx-2" href="#about">
+                <i class="fas fa-user me-2"></i>About
+            </a>
+            <a class="nav-link mx-2" href="#education">
+                <i class="fas fa-graduation-cap me-2"></i>Education
+            </a>
+            <a class="nav-link mx-2" href="#skills">
+                <i class="fas fa-code me-2"></i>Skills
+            </a>
+            <a class="nav-link mx-2" href="#projects">
+                <i class="fas fa-laptop-code me-2"></i>Projects
+            </a>
+            <a class="nav-link mx-2" href="#contact">
+                <i class="fas fa-envelope me-2"></i>Contact
+            </a>
+        </nav>
+        <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#mobileNav">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <!-- Mobile navigation -->
+    <div class="collapse navbar-collapse mobile-nav" id="mobileNav">
+        <nav class="d-md-none">
+            <a class="nav-link" href="#home">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+            <a class="nav-link" href="#about">
+                <i class="fas fa-user me-2"></i>About
+            </a>
+            <a class="nav-link" href="#education">
+                <i class="fas fa-graduation-cap me-2"></i>Education
+            </a>
+            <a class="nav-link" href="#skills">
+                <i class="fas fa-code me-2"></i>Skills
+            </a>
+            <a class="nav-link" href="#projects">
+                <i class="fas fa-laptop-code me-2"></i>Projects
+            </a>
+            <a class="nav-link" href="#contact">
+                <i class="fas fa-envelope me-2"></i>Contact
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content" id="home">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="content-text col-lg-6 fade-in">
+                <h1>Hi, I'm <span class="text-neon">Ayesha Adnan</span></h1>
+                <h2>I'm a <span class="text-neon typing" id="typing-text"></span></h2>
+                <p class="intro-text">Passionate about creating beautiful and functional web experiences with expertise in front-end development and UI/UX design.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.linkedin.com/in/your-profile" class="btn btn-linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        Let's Connect
+                    </a>
+                    <a href="#contact" class="btn btn-contact">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="content-image col-lg-6 text-center fade-in">
+                <div class="animated-shape">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</code></pre>
+                            <pre><code class="code-line">  name: <span class="string">'Ayesha Adnan'</span>,</code></pre>
+                            <pre><code class="code-line">  role: <span class="string">'Frontend Developer'</span>,</code></pre>
+                            <pre><code class="code-line">  skills: [<span class="string">'HTML'</span>, <span class="string">'CSS'</span>, <span class="string">'JavaScript'</span>],</code></pre>
+                            <pre><code class="code-line">  passion: <span class="string">'Creating Beautiful UI'</span></code></pre>
+                            <pre><code class="code-line">};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="about-section" id="about">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">About <span class="text-neon">Me</span></h2>
+        <div class="row align-items-center">
+            <div class="col-lg-6 fade-in">
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Web Development</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>UI/UX Design</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Responsive Design</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 fade-in">
+                <div class="about-content">
+                    <h3 class="mb-4">Who I Am</h3>
+                    <p class="about-text">I am a passionate fresher developer with a keen interest in creating beautiful and functional web experiences. With a background in Computer Science, I combine technical expertise with creative problem-solving skills.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-title">Experience:</span>
+                            <span class="info-value">Fresher</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Speciality:</span>
+                            <span class="info-value">Web Design, UI/UX</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Address:</span>
+                            <span class="info-value">Karachi, Pakistan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Email:</span>
+                            <span class="info-value">ayesha7june@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="education-section py-5" id="education">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">Educational <span class="text-neon">Journey</span></h2>
+        
+        <!-- Desktop Timeline View (d-none d-md-block) -->
+        <div class="timeline d-none d-md-block">
+            <div class="timeline-container left">
+                <div class="education-box fade-in">
+                    <div class="edu-icon">
+                        <i class="fas fa-laptop-code text-neon"></i>
+                    </div>
+                    <h3 class="text-neon">2024 - Present</h3>
+                    <h4>CPISM - Full Stack Development</h4>
+                    <p class="mb-2">Aptech Computer Education</p>
+                    <div class="edu-details">
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Full Stack Web Development</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Frontend & Backend Technologies</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Database Management</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Modern Web Frameworks</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="education-box fade-in">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap text-neon"></i>
+                    </div>
+                    <h3 class="text-neon">2020 - 2024</h3>
+                    <h4>Bachelor in Bio Technology</h4>
+                    <p class="mb-2">University of Karachi</p>
+                    <div class="edu-details">
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Molecular Biology</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Biochemistry</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Genetic Engineering</p>
+                        <p><i class="fas fa-star text-neon me-2"></i>CGPA: 3.8/4.0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container left">
+                <div class="education-box fade-in">
+                    <div class="edu-icon">
+                        <i class="fas fa-school text-neon"></i>
+                    </div>
+                    <h3 class="text-neon">2018 - 2020</h4>
+                    <h4>Intermediate in Engineering</h4>
+                    <p>Khatoon-e-Pakistan</p>
+                    <div class="edu-details">
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Physics</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Mathematics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="education-box fade-in">
+                    <div class="edu-icon">
+                        <i class="fas fa-user-graduate text-neon"></i>
+                    </div>
+                    <h3 class="text-neon">2016 - 2018</h3>
+                    <h4>Matriculation</h4>
+                    <p>Programmer School</p>
+                    <div class="edu-details">
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Engineering</p>
+                        <p><i class="fas fa-check-circle text-neon me-2"></i>Mathematics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Card View (d-md-none) -->
+        <div class="row g-4 d-md-none">
+            <!-- Same cards as before -->
+            <div class="col-12">
+                <div class="edu-card">
+                    <div class="edu-card-inner">
+                        <div class="edu-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="year-badge">2024 - Present</div>
+                        <h3>CPISM - Full Stack Development</h3>
+                        <h4>Aptech Computer Education</h4>
+                        <div class="edu-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Full Stack Web Development</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Frontend & Backend Technologies</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Database Management</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Modern Web Frameworks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="edu-card">
+                    <div class="edu-card-inner">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="year-badge">2020 - 2024</div>
+                        <h3>Bachelor in Bio Technology</h3>
+                        <h4>University of Karachi</h4>
+                        <div class="edu-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Molecular Biology</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Biochemistry</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Genetic Engineering</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>CGPA: 3.8/4.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="edu-card">
+                    <div class="edu-card-inner">
+                        <div class="edu-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="year-badge">2018 - 2020</div>
+                        <h3>Intermediate in Engineering</h3>
+                        <h4>Khatoon-e-Pakistan</h4>
+                        <div class="edu-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Physics</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mathematics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="edu-card">
+                    <div class="edu-card-inner">
+                        <div class="edu-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="year-badge">2016 - 2018</div>
+                        <h3>Matriculation</h3>
+                        <h4>Programmer School</h4>
+                        <div class="edu-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Engineering</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mathematics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section" id="skills">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">Professional <span class="text-neon">Expertise</span></h2>
+        <div class="row g-4">
+            <div class="col-lg-6 fade-in">
+                <div class="skills-group technical-skills">
+                    <div class="skills-header">
+                        <i class="fas fa-laptop-code text-neon skills-icon"></i>
+                        <h3>Technical Proficiency</h3>
+                        <p class="text-muted">Development Tools & Technologies</p>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-item">
+                            <div class="skill-info d-flex justify-content-between">
+                                <span class="skill-name"><i class="fab fa-html5 me-2"></i>HTML/CSS</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info d-flex justify-content-between">
+                                <span class="skill-name"><i class="fab fa-js-square me-2"></i>JavaScript</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info d-flex justify-content-between">
+                                <span class="skill-name"><i class="fab fa-react me-2"></i>React.js</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 fade-in">
+                <div class="skills-group soft-skills">
+                    <div class="skills-header">
+                        <i class="fas fa-brain text-neon skills-icon"></i>
+                        <h3>Professional Skills</h3>
+                        <p class="text-muted">Core Competencies</p>
+                    </div>
+                    <div class="soft-skills-container">
+                        <div class="soft-skill-item">
+                            <div class="skill-icon-wrapper">
+                                <i class="fas fa-comments text-neon"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Communication</h4>
+                                <p>Strong written and verbal communication skills with the ability to explain complex technical concepts clearly.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Team Collaboration</span>
+                                    <span class="skill-tag">Client Relations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="soft-skill-item">
+                            <div class="skill-icon-wrapper">
+                                <i class="fas fa-tasks text-neon"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Project Management</h4>
+                                <p>Experience in managing multiple projects while maintaining attention to detail and meeting deadlines.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Time Management</span>
+                                    <span class="skill-tag">Organization</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="soft-skill-item">
+                            <div class="skill-icon-wrapper">
+                                <i class="fas fa-lightbulb text-neon"></i>
+                            </div>
+                            <div class="skill-content">
+                                <h4>Problem Solving</h4>
+                                <p>Analytical mindset with a proven track record of delivering innovative solutions to complex challenges.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fas fa-brain me-2"></i>Critical Thinking</span>
+                                    <span class="skill-tag"><i class="fas fa-lightbulb me-2"></i>Innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects-section" id="projects">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">Featured <span class="text-neon">Projects</span></h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 fade-in">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="paresss.png" alt="Perfume Website">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Perfume Website</h3>
+                            <div class="project-links">
+                                <a href="https://arqamkhan414.github.io/E-PROJECTF/" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://arqamkhan414.github.io/E-PROJECTF/" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Perfume Website</h3>
+                        <p>An elegant e-commerce website for perfumes with modern design and smooth user experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5 me-2"></i>HTML5</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt me-2"></i>CSS3</span>
+                            <span class="tech-tag"><i class="fab fa-js me-2"></i>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 fade-in">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="wheatherdashborad.png" alt="Weather Dashboard">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Weather Dashboard</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/EngAffan/Weather-Dashboard-Using-HTML-CSS-JAVASCRIPT" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>Interactive weather application with location-based updates and animated weather icons.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5 me-2"></i>HTML5</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt me-2"></i>CSS3</span>
+                            <span class="tech-tag"><i class="fab fa-js me-2"></i>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 fade-in">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="taskmanagertemplate.jpg" alt="Task Tracker">
+                        <div class="project-overlay">
+                            <h3 class="project-title">Task Tracker</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nhumayun2/Task-Tracker" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Tracker</h3>
+                        <p>A clean and intuitive task management app with local storage and drag-drop functionality.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5 me-2"></i>HTML5</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt me-2"></i>CSS3</span>
+                            <span class="tech-tag"><i class="fab fa-js me-2"></i>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">Get In <span class="text-neon">Touch</span></h2>
+        <div class="row g-4">
+            <div class="col-lg-5 fade-in">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope text-neon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:ayesha7june@gmail.com" class="contact-link">ayesha7june@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt text-neon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Karachi, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h3>Professional Profile</h3>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/your-profile" class="social-icon" title="Connect on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="social-text">Let's Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 fade-in">
+                <form class="contact-form" id="contactForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn submit-btn">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Thank You!</h3>
+                        <p>Your message has been sent successfully. I'll get back to you soon!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const texts = ["UI / UX Designer", "Web Developer", "Graphic Designer"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type() {
+        if (count === texts.length) {
+            count = 0;
+        }
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        document.getElementById('typing-text').textContent = letter;
+        if (letter.length === currentText.length) {
+            count++;
+            index = 0;
+            setTimeout(type, 2000);
+        } else {
+            setTimeout(type, 150);
+        }
+    }());
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
